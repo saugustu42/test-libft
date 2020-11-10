@@ -3,6 +3,8 @@
 
 int		main(void)
 {
-	printf("checking atoi\n");
-	printf("expected: %d\n", ft_atoi("000000000000000000000987"));
+	printf("checking atoi crutch\n");
+	printf("expected: %d\n", 987);
+	printf("__test__: %d\n", ft_atoi("000000000000000000000987"));
+	printf("\n");
 }
