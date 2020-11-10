@@ -27,7 +27,7 @@ int		main(void)
 		printf("you return NULL :(\n");
 	else
 	{
-		printf("expected: %s\n", NULL);
+		printf("expected: %s\n", "(null)");
 		printf("__test__: %s\n", *splited);
 	}
 }

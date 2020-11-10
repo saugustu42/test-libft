@@ -12,3 +12,6 @@ main.o : main.c
 
 $(LIB) :
 	$(MAKE) -C ../eval-libft
+
+clean :
+	rm -rf $(NAME) main.o
