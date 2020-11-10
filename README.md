@@ -1,7 +1,7 @@
 # test-libft
 
-cd to your preferred tests folder. 
-You should clone my test here and put here your lib folder.
+cd to your preferred tests directory. 
+You should clone my test here and put here your lib directory.
 
 git clone https://github.com/saugustu42/test-libft.git
 
