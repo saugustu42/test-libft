@@ -13,4 +13,4 @@ cd test-libft
 
 make
 
-./test
+./test | cat -e

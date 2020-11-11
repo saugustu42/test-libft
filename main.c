@@ -12,11 +12,11 @@ int		main(void)
 	char *substr_ret;
 	substr_ret = ft_substr("HelloCat", 15, 3);
 	if (substr_ret == NULL)
-		printf("you return NULL :(\n");
+		printf("you return NULL :( expected empty string. it is stupid, but fact.\n");
 	else
 	{
-		printf("expected_until_|: %s|\n", "");
-		printf("__test___until_|: %s|\n", substr_ret);
+		printf("expected: %s\n", "");
+		printf("__test__: %s\n", substr_ret);
 	}
 	printf("\n");
 
@@ -24,7 +24,7 @@ int		main(void)
 	char **splited;
 	splited = ft_split("    ", ' ');
 	if (splited == NULL)
-		printf("you return NULL :(\n");
+		printf("you return NULL :( expected array of pointers with one element pointing to NULL\n");
 	else
 	{
 		printf("expected: %s\n", "(null)");
