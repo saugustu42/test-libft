@@ -41,14 +41,6 @@ int		main(void)
 	printf("EXP: %s\n", "RUN!");
 	printf("GOT: %s\n", ft_substr("1 2 3... RUN!", 9, 4));
 
-	printf("\nSPLIT with empty string\n\n");
-	splited = ft_split("", ' ');
-	if (splited == NULL)
-		printf("you return NULL :(\n");
-	else
-		printf("EXP: (null)\n");
-		printf("GOT: %s\n", splited[0]);
-	
 	printf("\nchecking split with string and \\0 as delimiter\n");
 	splited = ft_split("Hello, world!", '\0');
 	if (splited == NULL)
@@ -58,4 +50,19 @@ int		main(void)
 		printf("EXP: Hello, world!\n");
 		printf("GOT: %s\n", splited[0]);
 	}
+
+	printf("\nSPLIT with empty string\n\n");
+	splited = ft_split("", ' ');
+	if (splited == NULL)
+		printf("you return NULL :(\n");
+	else
+		printf("EXP: (null)\n");
+		printf("GOT: %s\n", splited[0]);
+
+	printf("\nchecking trim with empty strings\n");
+	printf("EXP: %s\n", "");
+	printf("GOT: %s\n", ft_strtrim("", " "));
+	printf("\nEXP: %s\n", "");
+	printf("GOT: %s\n", ft_strtrim("", ""));
+	
 }
