@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "../eval-libft/libft.h"
+#include <string.h>
 
 int		main(void)
 {
@@ -29,5 +30,32 @@ int		main(void)
 	{
 		printf("expected: %s\n", "(null)");
 		printf("__test__: %s\n", *splited);
+	}
+
+
+	printf("\nSTRNSTR\n\n");
+	printf("EXP: %s\n", strnstr("000000123", "123", 9));
+	printf("GOT: %s\n", ft_strnstr("000000123", "123", 9));
+
+	printf("\nSUBSTR\n\n");
+	printf("EXP: %s\n", "RUN!");
+	printf("GOT: %s\n", ft_substr("1 2 3... RUN!", 9, 4));
+
+	printf("\nSPLIT with empty string\n\n");
+	splited = ft_split("", ' ');
+	if (splited == NULL)
+		printf("you return NULL :(\n");
+	else
+		printf("EXP: (null)\n");
+		printf("GOT: %s\n", splited[0]);
+	
+	printf("\nchecking split with string and \\0 as delimiter\n");
+	splited = ft_split("Hello, world!", '\0');
+	if (splited == NULL)
+		printf("you return NULL :(\n");
+	else
+	{
+		printf("EXP: Hello, world!\n");
+		printf("GOT: %s\n", splited[0]);
 	}
 }
