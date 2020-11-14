@@ -1,17 +1,23 @@
 NAME = test
 
-LIB = ../eval-libft/libft.a
+LIB_PATH = ../eval-libft
+LIB = $(LIB_PATH)/libft.a
 
 all : $(NAME)
 
 $(NAME) : $(LIB) main.o
-	gcc main.o -L../eval-libft -lft -o $(NAME)
+	gcc main.o -L$(LIB_PATH) -lft -o $(NAME)
 
 main.o : main.c
 	gcc -c main.c
 
-$(LIB) :
-	$(MAKE) -C ../eval-libft
+$(LIB) : NONE
+	$(MAKE) -C $(LIB_PATH)
 
 clean :
-	rm -rf $(NAME) main.o
+	rm -f  main.o
+
+fclean : clean
+	rm -f $(NAME)
+
+.PHONY : NONE

@@ -9,7 +9,7 @@ int		main(void)
 	printf("__test__: %d\n", ft_atoi("000000000000000000000042"));
 	printf("\n");
 
-	printf("checking substr return when index out of string\n");
+	printf("checking substr return when index is out of the string\n");
 	char *substr_ret;
 	substr_ret = ft_substr("HelloCat", 15, 3);
 	if (substr_ret == NULL)
@@ -32,14 +32,14 @@ int		main(void)
 		printf("__test__: %s\n", *splited);
 	}
 
+	printf("\nSPLIT with empty string\n\n");
+	splited = ft_split("", ' ');
+	if (splited == NULL)
+		printf("you return NULL :(\n");
+	else
+		printf("EXP: (null)\n");
+		printf("GOT: %s\n", splited[0]);
 
-	printf("\nSTRNSTR\n\n");
-	printf("EXP: %s\n", strnstr("000000123", "123", 9));
-	printf("GOT: %s\n", ft_strnstr("000000123", "123", 9));
-
-	printf("\nSUBSTR\n\n");
-	printf("EXP: %s\n", "RUN!");
-	printf("GOT: %s\n", ft_substr("1 2 3... RUN!", 9, 4));
 
 	printf("\nchecking split with string and \\0 as delimiter\n");
 	splited = ft_split("Hello, world!", '\0');
@@ -51,13 +51,14 @@ int		main(void)
 		printf("GOT: %s\n", splited[0]);
 	}
 
-	printf("\nSPLIT with empty string\n\n");
-	splited = ft_split("", ' ');
-	if (splited == NULL)
-		printf("you return NULL :(\n");
-	else
-		printf("EXP: (null)\n");
-		printf("GOT: %s\n", splited[0]);
+
+	printf("\nSTRNSTR\n\n");
+	printf("EXP: %s\n", strnstr("000000123", "123", 9));
+	printf("GOT: %s\n", ft_strnstr("000000123", "123", 9));
+
+	printf("\nSUBSTR\n\n");
+	printf("EXP: %s\n", "RUN!");
+	printf("GOT: %s\n", ft_substr("1 2 3... RUN!", 9, 4));
 
 	printf("\nchecking trim with empty strings\n");
 	printf("EXP: %s\n", "");
