@@ -50,6 +50,12 @@ run-unit : $(unit)
 $(cfg) : 
 	git clone https://github.com/alexoleshk/cfg.git
 
+grep-printf :
+	cd $(LIB_PATH) && make clean && grep -RIn printf .
+
+grep-malloc :
+	cd $(LIB_PATH) && make clean && grep -RIn malloc .
+
 myvim : $(cfg)
 	vim -u $(cfg)
 
