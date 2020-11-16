@@ -7,6 +7,8 @@ Libftest = ./Libftest/grademe.sh
 
 unit = ./libft-unit-test
 
+cfg = ./cfg/.vimrc
+
 all : $(NAME)
 
 $(NAME) : $(LIB) main.o
@@ -45,4 +47,10 @@ run-libftest : $(Libftest)
 run-unit : $(unit)
 	cd $(unit) && make f
 
-.PHONY : NONE norm
+$(cfg) : 
+	git clone https://github.com/alexoleshk/cfg.git
+
+myvim : $(cfg)
+	vim -u $(cfg)
+
+.PHONY : NONE norm run-my-test run-libftest run-unit
