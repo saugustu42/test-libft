@@ -59,4 +59,4 @@ grep-malloc :
 myvim : $(cfg)
 	vim -u $(cfg)
 
-.PHONY : NONE norm run-my-test run-libftest run-unit
+.PHONY : NONE norm run-my-test run-libftest run-unit grep-printf grep-malloc myvim
