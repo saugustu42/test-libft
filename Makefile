@@ -20,4 +20,7 @@ clean :
 fclean : clean
 	rm -f $(NAME)
 
-.PHONY : NONE
+norm :
+	norminette ./eval-libft
+
+.PHONY : NONE norm

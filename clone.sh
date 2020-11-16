@@ -5,3 +5,4 @@ if [ $# != 1 ] ; then
 	exit 1
 fi
 git clone "$1" eval-libft
+rm -rf ./eval-libft/.git
