@@ -1,6 +1,6 @@
 NAME = test
 
-LIB_PATH = ../eval-libft
+LIB_PATH = ./eval-libft
 LIB = $(LIB_PATH)/libft.a
 
 all : $(NAME)
@@ -22,5 +22,9 @@ fclean : clean
 
 norm :
 	norminette ./eval-libft
+
+run-my-test : $(NAME)
+	@echo "\n\n\n"
+	./$(NAME) | cat -e
 
 .PHONY : NONE norm

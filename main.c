@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../eval-libft/libft.h"
+#include "./eval-libft/libft.h"
 #include <string.h>
 
 int		main(void)
