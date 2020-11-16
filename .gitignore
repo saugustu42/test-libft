@@ -2,3 +2,4 @@ test
 *.o
 *.swp
 eval-libft
+Libftest
