@@ -5,6 +5,8 @@ LIB = $(LIB_PATH)/libft.a
 
 Libftest = ./Libftest/grademe.sh
 
+unit = ./libft-unit-test
+
 all : $(NAME)
 
 $(NAME) : $(LIB) main.o
@@ -32,10 +34,15 @@ run-my-test : $(NAME)
 $(Libftest) :
 	git clone https://github.com/jtoty/Libftest.git
 	cp ./test-configs/my_config.sh ./Libftest
+
+$(unit) :
+	git clone https://github.com/alelievr/libft-unit-test.git
+	cp ./test-configs/Makefile $(unit)
 	
 run-libftest : $(Libftest)
 	$(Libftest) -n
 
-# run-unit : $(unit)
+run-unit : $(unit)
+	cd $(unit) && make f
 
 .PHONY : NONE norm
