@@ -59,6 +59,8 @@ int		main(void)
 	printf("\nSUBSTR\n\n");
 	printf("EXP: %s\n", "RUN!");
 	printf("GOT: %s\n", ft_substr("1 2 3... RUN!", 9, 4));
+	printf("EXP: %s\n", "est");
+	printf("GOT: %s\n", ft_substr("test", 1, 8));
 
 	printf("\nchecking trim with empty strings\n");
 	printf("EXP: %s\n", "");
