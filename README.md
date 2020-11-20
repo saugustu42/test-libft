@@ -1,5 +1,7 @@
 # test-libft
 
+**К сожалению, тест нормально работает только на маке**
+
 cd to your preferred tests directory. 
 
 git clone https://github.com/saugustu42/test-libft.git
