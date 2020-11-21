@@ -67,7 +67,7 @@ int		main(void)
 	printf("GOT: %s\n", ft_strtrim("", " "));
 	printf("\nEXP: %s\n", "");
 	printf("GOT: %s\n", ft_strtrim("", ""));
-	
+
 	printf("\nFT_STRTRIM\n\n");
 	printf("EXP: %s\n", "A**A");
 	printf("GOT: %s\n", ft_strtrim("*@****@**A**A***@*", "*@"));
@@ -75,4 +75,6 @@ int		main(void)
 	printf("GOT: %s\n", ft_strtrim("*@*..****@**@**....A....***@****..*@***", ".*@"));
 	printf("EXP: %s\n", "A");
 	printf("GOT: %s\n", ft_strtrim("*@****@*******@*A", "*@"));
+	printf("EXP: %s\n", "A");
+	printf("GOT: %s\n", ft_strtrim("A", "123456789"));
 }
