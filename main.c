@@ -51,6 +51,15 @@ int		main(void)
 		printf("GOT: %s\n", splited[0]);
 	}
 
+	printf("\nchecking split with empty string and \\0 as delimiter\n");
+	splited = ft_split("", '\0');
+	if (splited == NULL)
+		printf("you return NULL :(\n");
+	else
+	{
+		printf("EXP: (null)\n");
+		printf("GOT: %s\n", splited[0]);
+	}
 
 	printf("\nSTRNSTR\n\n");
 	printf("EXP: %s\n", strnstr("000000123", "123", 9));
