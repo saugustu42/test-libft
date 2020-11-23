@@ -31,7 +31,7 @@ norm :
 
 run-my-test : $(NAME)
 	@echo "\n\n\n"
-	./$(NAME) | cat -e
+	./$(NAME)
 
 $(Libftest) :
 	git clone https://github.com/jtoty/Libftest.git
@@ -40,14 +40,14 @@ $(Libftest) :
 $(unit) :
 	git clone https://github.com/alelievr/libft-unit-test.git
 	cp ./test-configs/Makefile $(unit)
-	
+
 run-libftest : $(Libftest)
 	$(Libftest) -n
 
 run-unit : $(unit)
 	cd $(unit) && make f
 
-$(cfg) : 
+$(cfg) :
 	git clone https://github.com/alexoleshk/cfg.git
 
 grep-printf :
