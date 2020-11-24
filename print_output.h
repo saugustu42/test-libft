@@ -8,7 +8,7 @@
 #define GREEN   "\033[32m"
 #define YELLOW  "\033[33m"
 #define BLUE    "\033[34;1m" //color with bold font
-#define MAGENTA "\033[35m"
+#define MAGENTA "\033[35;1m"
 #define CYAN    "\033[36m"
 #define WHITE   "\033[37m"
 
@@ -26,6 +26,7 @@
 
 void	print_result(char *exp, char *got); //print expected-result and got-result with yellow dollar (emuleted cat -e)
 void	print_title(char *title);			//print blue bold font text
-char	*my_itoa(int n);					// additional libft-function for print_result
+void	print_tester_name();				//yellow dollar font
+
 
 #endif
