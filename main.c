@@ -12,48 +12,30 @@ void	print_result(char *exp, char *got) //print expected-result and got-result w
 
 void	print_title(char *title) //print blue bold font text
 {
-		printf("\n%s%s%s\n\n", BLUE, title, RESET);
+		printf(MAGENTA"\n**********************************************************************\n");
+		printf("%35s\n", title);
+		printf("**********************************************************************\n\n"RESET);
 }
 
-char			*my_itoa(int n) // additional libft-function for print_result
+void	print_tester_name()
 {
-	char	*str;
-	int		minus;
-	int		len;
-	int		num_copy;
-	int		i;
-
-	if (n == -2147483648)
-		return (strdup("-2147483648"));
-	if (n == 0)
-		return (strdup("0"));
-	num_copy = n;
-	i = 1;
-	while (num_copy /= 10)
-		i++;
-	minus = n < 0;
-	if (minus)
-		n *= -1;
-	len = minus + i;
-	if (!(str = malloc((len + 1) * sizeof(char))))
-		return (NULL);
-	if (minus)
-		str[0] = '-';
-	str[len--] = '\0';
-	while (n)
-	{
-		str[len--] = n % 10 + '0';
-		n /= 10;
-	}
-	return (str);
+	printf("\n"YELLOW" $$$$$$ $$$$$   $$$$  $$$$$$        $$     $$$$$$ $$$$$  $$$$$$ $$$$$$\n"
+					"   $$   $$     $$       $$          $$       $$   $$  $$ $$       $$\n"
+					"   $$   $$$$    $$$$    $$   $$$$$  $$       $$   $$$$$  $$$$     $$\n"
+					"   $$   $$         $$   $$          $$       $$   $$  $$ $$       $$\n"
+					"   $$   $$$$$   $$$$    $$          $$$$$$ $$$$$$ $$$$$  $$       $$\n"RESET);
 }
+
 int		main(void)
 {
 
+	print_tester_name();
 	print_title("ATOI");
 
+	char *num;
+	asprintf(&num, "%d", ft_atoi("000000000000000000000042"));
 	printf("checking atoi crutch\n");
-	print_result("42", my_itoa(ft_atoi("000000000000000000000042")));
+	print_result("42", num);
 
 
 
@@ -99,10 +81,10 @@ int		main(void)
 
 	print_title("SUBSTR");
 
-	printf("\nchecking basic cases\n");
+	printf("checking basic cases\n");
 	print_result("RUN!", ft_substr("1 2 3... RUN!", 9, 4));
 	print_result("est", ft_substr("test", 1, 8));
-	printf("checking substr return when index is out of the string\n");
+	printf("\nchecking substr return when index is out of the string\n");
 	char *substr_ret;
 	substr_ret = ft_substr("HelloCat", 15, 3);
 	if (substr_ret == NULL)
@@ -123,4 +105,5 @@ int		main(void)
 	print_result("B", ft_strtrim("*@*..****@**@**....B....***@****..*@***", ".*@"));
 	print_result("C", ft_strtrim("*@****@*******@*C", "*@"));
 	print_result("D", ft_strtrim("D", "123456789"));
+
 }
