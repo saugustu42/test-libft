@@ -26,16 +26,34 @@ void	print_tester_name()
 					"   $$   $$$$$   $$$$    $$          $$$$$$ $$$$$$ $$$$$  $$       $$\n"RESET);
 }
 
+char	test_lower(char c)
+{
+	if (c >= 'A' && c <= 'Z')
+		c = c - 'A' + 'a';
+	return (c);
+}
+
 int		main(void)
 {
 
 	print_tester_name();
+
 	print_title("ATOI");
 
-	char *num;
-	asprintf(&num, "%d", ft_atoi("000000000000000000000042"));
+	char num[12];
+	sprintf(num, "%d", ft_atoi("000000000000000000000042"));
 	printf("checking atoi crutch\n");
 	print_result("42", num);
+	sprintf(num, "%d", ft_atoi("-------++---42"));
+	print_result("0", num);
+
+
+
+
+	print_title("STRNSTR");
+
+	printf("checking basic case\n");
+	print_result("123", ft_strnstr("000000123", "123", 9));
 
 
 
@@ -71,14 +89,6 @@ int		main(void)
 
 
 
-	print_title("STRNSTR");
-
-	printf("checking basic case\n");
-	print_result("123", ft_strnstr("000000123", "123", 9));
-
-
-
-
 	print_title("SUBSTR");
 
 	printf("checking basic cases\n");
@@ -105,5 +115,15 @@ int		main(void)
 	print_result("B", ft_strtrim("*@*..****@**@**....B....***@****..*@***", ".*@"));
 	print_result("C", ft_strtrim("*@****@*******@*C", "*@"));
 	print_result("D", ft_strtrim("D", "123456789"));
+
+
+
+	print_title("STRMAPI");
+
+	printf("checking with empty string\n");
+	print_result("", ft_strmapi("", test_lower));
+
+	printf("\nchecking without function\n");
+	print_result("", ft_strmapi("School21", 0));
 
 }
