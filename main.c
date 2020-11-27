@@ -120,8 +120,4 @@ int		main(void)
 
 	printf("checking with empty string\n");
 	print_result("", ft_strmapi("", test));
-
-	printf("\nchecking without function\n");
-	print_result("", ft_strmapi("School21", 0));
-
 }
