@@ -26,11 +26,9 @@ void	print_tester_name()
 					"   $$   $$$$$   $$$$    $$          $$$$$$ $$$$$$ $$$$$  $$       $$\n"RESET);
 }
 
-char	test_lower(char c)
+char	test(unsigned int i, char c)
 {
-	if (c >= 'A' && c <= 'Z')
-		c = c - 'A' + 'a';
-	return (c);
+	return c + (i % 2);
 }
 
 int		main(void)
@@ -121,7 +119,7 @@ int		main(void)
 	print_title("STRMAPI");
 
 	printf("checking with empty string\n");
-	print_result("", ft_strmapi("", test_lower));
+	print_result("", ft_strmapi("", test));
 
 	printf("\nchecking without function\n");
 	print_result("", ft_strmapi("School21", 0));
