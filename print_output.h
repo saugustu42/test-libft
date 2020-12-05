@@ -24,7 +24,7 @@
 
 #define DOLLAR YELLOW "$" RESET
 
-void	print_result(char *exp, char *got); //print expected-result and got-result with yellow dollar (emuleted cat -e)
+void	print_result(char *exp, char *got); //print expected-result and got-result with yellow dollar (emulated cat -e)
 void	print_title(char *title);			//print blue bold font text
 void	print_tester_name();				//yellow dollar font
 

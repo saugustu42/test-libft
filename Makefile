@@ -3,6 +3,10 @@ NAME = test
 LIB_PATH = ./eval-libft
 LIB = $(LIB_PATH)/libft.a
 
+LIST = main.c print_output.c
+
+OBJ = $(patsubst %.c,%.o,$(LIST))
+
 Libftest = ./Libftest/grademe.sh
 
 unit = ./libft-unit-test
@@ -11,23 +15,23 @@ cfg = ./cfg/.vimrc
 
 all : $(NAME)
 
-$(NAME) : $(LIB) main.o
-	gcc main.o -L$(LIB_PATH) -lft -o $(NAME)
+$(NAME) : $(LIB) $(OBJ)
+	gcc $(OBJ) -L$(LIB_PATH) -lft -o $(NAME)
 
-main.o : main.c
-	gcc -c main.c
+%.o : %.c
+	gcc -c $< -o $@
 
 $(LIB) : NONE
 	$(MAKE) -C $(LIB_PATH)
 
 clean :
-	rm -f  main.o
+	rm -f $(OBJ)
 
 fclean : clean
 	rm -f $(NAME)
 
 norm :
-	norminette ./eval-libft
+	cd $(LIB_PATH) && make clean && norminette .
 
 run-my-test : $(NAME)
 	@echo "\n\n\n"

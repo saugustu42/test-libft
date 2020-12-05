@@ -3,29 +3,6 @@
 #include <string.h>
 #include "print_output.h"
 
-void	print_result(char *exp, char *got) //print expected-result and got-result with yellow dollar (emuleted cat -e)
-{
-	printf("EXP: %s%s\n", exp, DOLLAR);
-	printf("GOT: %s%s\n", got, DOLLAR);
-
-}
-
-void	print_title(char *title) //print blue bold font text
-{
-		printf(MAGENTA"\n**********************************************************************\n");
-		printf("%35s\n", title);
-		printf("**********************************************************************\n\n"RESET);
-}
-
-void	print_tester_name()
-{
-	printf("\n"YELLOW" $$$$$$ $$$$$   $$$$  $$$$$$        $$     $$$$$$ $$$$$  $$$$$$ $$$$$$\n"
-					"   $$   $$     $$       $$          $$       $$   $$  $$ $$       $$\n"
-					"   $$   $$$$    $$$$    $$   $$$$$  $$       $$   $$$$$  $$$$     $$\n"
-					"   $$   $$         $$   $$          $$       $$   $$  $$ $$       $$\n"
-					"   $$   $$$$$   $$$$    $$          $$$$$$ $$$$$$ $$$$$  $$       $$\n"RESET);
-}
-
 char	test(unsigned int i, char c)
 {
 	return c + (i % 2);
@@ -42,6 +19,7 @@ int		main(void)
 	sprintf(num, "%d", ft_atoi("000000000000000000000042"));
 	printf("checking atoi crutch\n");
 	print_result("42", num);
+	printf("checking basic case\n");
 	sprintf(num, "%d", ft_atoi("-------++---42"));
 	print_result("0", num);
 
@@ -120,8 +98,4 @@ int		main(void)
 
 	printf("checking with empty string\n");
 	print_result("", ft_strmapi("", test));
-
-	printf("\nchecking without function\n");
-	print_result("", ft_strmapi("School21", 0));
-
 }
