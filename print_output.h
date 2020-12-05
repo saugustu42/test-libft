@@ -1,6 +1,5 @@
 #ifndef PRINT_OUTPUT_H
 # define PRINT_OUTPUT_H
-#include <stdio.h>
 
 #define RESET   "\033[0m"
 #define BLACK   "\033[30m"  //30-37 text colors
@@ -23,6 +22,11 @@
 #define REVERSE  "\033[7;1m"
 
 #define DOLLAR YELLOW "$" RESET
+
+#define CHECK "\U00002705"
+#define CROSS "\U0000274C"
+#define SHIELD "\U0001F6E1"
+#define BOOM  "\U0001F4A5"
 
 void	print_result(char *exp, char *got); //print expected-result and got-result with yellow dollar (emulated cat -e)
 void	print_title(char *title);			//print blue bold font text
