@@ -2,8 +2,16 @@
 
 void	print_result(char *exp, char *got) //print expected-result and got-result with yellow dollar (emuleted cat -e)
 {
-	printf("EXP: %s%s\n", exp, DOLLAR);
-	printf("GOT: %s%s\n", got, DOLLAR);
+	if (got == NULL)
+		got = strdup("(null)");
+	if (strcmp(exp, got) == 0)
+		printf(CHECK);
+	else
+	{
+		printf(CROSS"\n");
+		printf("EXP: %s%s\n", exp, DOLLAR);
+		printf("GOT: %s%s\n", got, DOLLAR);
+	}
 
 }
 
