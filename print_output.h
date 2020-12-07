@@ -1,6 +1,10 @@
 #ifndef PRINT_OUTPUT_H
 # define PRINT_OUTPUT_H
 
+#include <stddef.h>
+#include <stdio.h>
+#include <string.h>
+
 #define RESET   "\033[0m"
 #define BLACK   "\033[30m"  //30-37 text colors
 #define RED     "\033[31m"
