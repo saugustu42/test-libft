@@ -45,25 +45,28 @@ int		main(void)
 	if (splited == NULL)
 		print_result("\033[31m:( expected array of pointers with one element pointing to NULL\033[0m", "(null)");
 	else
-		print_result("(null)", "(null)");
+		print_result("(null)", *splited);
+
 	printf("\nchecking split with empty string ");
 	splited = ft_split("", ' ');
 	if (splited == NULL)
 		print_result("\033[31m :( expected array of pointers with one element pointing to NULL\033[0m", "(null)");
 	else
-		print_result("(null)", "(null)");
+		print_result("(null)", *splited);
+
 	printf("\nchecking split with string and \\0 as delimiter ");
 	splited = ft_split("Hello, world!", '\0');
 	if (splited == NULL)
 		print_result("Hello, world!", "(null)");
 	else
 		print_result("Hello, world!", *splited);
+
 	printf("\nchecking split with empty string and \\0 as delimiter ");
 	splited = ft_split("", '\0');
 	if (splited == NULL)
 		print_result("\033[31m :( expected array of pointers with one element pointing to NULL\033[0m", "(null)");
 	else
-		print_result("(null)", "(null)");
+		print_result("(null)", *splited);
 
 
 
