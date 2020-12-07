@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include "./eval-libft/libft.h"
 #include "print_output.h"
 
